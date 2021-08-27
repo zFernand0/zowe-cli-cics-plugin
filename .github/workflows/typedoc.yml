@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           name: zowe/zowe-cli
-          ref: refs/heads/zowe-cli-typedoc-theme
+          ref: refs/remotes/origin/zowe-cli-typedoc-theme
           path: docs/typedoc-theme-clone
 
       - run: ls -al docs/typedoc-theme-clone
