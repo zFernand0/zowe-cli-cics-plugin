@@ -1,0 +1,529 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@zowe/cics-for-zowe-cli</title>
+	<meta name="description" content="Documentation for @zowe/cics-for-zowe-cli">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@zowe/cics-for-zowe-cli</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>@zowe/cics-for-zowe-cli</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#ibm®-cics®-plug-in-for-zowe-cli" id="ibm®-cics®-plug-in-for-zowe-cli" style="color: inherit; text-decoration: none;">
+					<h1>IBM® CICS® Plug-in for Zowe CLI</h1>
+				</a>
+				<p><a href="https://codecov.io/gh/zowe/zowe-cli-cics-plugin"><img src="https://codecov.io/gh/zowe/zowe-cli-cics-plugin/branch/master/graph/badge.svg" alt="codecov"></a></p>
+				<p>The IBM CICS Plug-in for Zowe CLI lets you extend Zowe CLI to interact with IBM CICS programs and transactions.</p>
+				<ul>
+					<li><a href="#how-the-plug-in-works">How the plug-in works</a></li>
+					<li><a href="#software-requirements">Software requirements</a></li>
+					<li><a href="#installing">Installing</a></li>
+					<li><a href="#building-from-source">Building from source</a></li>
+					<li><a href="#creating-a-user-profile">Creating a user profile</a></li>
+					<li><a href="#running-tests">Running tests</a></li>
+					<li><a href="#uninstalling">Uninstalling</a></li>
+					<li><a href="#contributing">Contributing</a></li>
+				</ul>
+				<a href="#how-the-plug-in-works" id="how-the-plug-in-works" style="color: inherit; text-decoration: none;">
+					<h2>How the plug-in works</h2>
+				</a>
+				<p>As an application developer, you can use the plug-in to perform various CICS-related tasks, such as the following:</p>
+				<ul>
+					<li>  Deploy code changes to CICS applications that were developed with COBOL.</li>
+					<li>  Deploy changes to CICS regions for testing or delivery.</li>
+					<li>  Automate CICS interaction steps in your CI/CD pipeline with Jenkins Automation Server or TravisCI.</li>
+				</ul>
+				<p>The plug-in uses the IBM CICS Management Client Interface (CMCI) API to achieve the interaction with CICS. For more information, see <a href="https://www.ibm.com/support/knowledgecenter/en/SSGMCP_5.3.0/com.ibm.cics.ts.clientapi.doc/topics/clientapi_overview.html">CICS management client interface</a> on the IBM Knowledge Center.</p>
+				<a href="#software-requirements" id="software-requirements" style="color: inherit; text-decoration: none;">
+					<h2>Software requirements</h2>
+				</a>
+				<p>Before you install and use the plug-in:</p>
+				<ul>
+					<li><p>Install Zowe CLI on your computer.</p>
+						<p>  <strong>Note:</strong> For more information, see <a href="https://zowe.github.io/docs-site/latest/user-guide/cli-installcli.html">Installing Zowe CLI</a>.</p>
+					</li>
+					<li><p>  Ensure that <a href="https://www.ibm.com/support/knowledgecenter/en/SSGMCP_5.2.0/com.ibm.cics.ts.home.doc/welcomePage/welcomePage.html">IBM CICS Transaction Server v5.2</a> or later is installed and running in your mainframe environment.</p>
+					</li>
+					<li><p>  Ensure that <a href="https://www.ibm.com/support/knowledgecenter/en/SSGMCP_5.2.0/com.ibm.cics.ts.clientapi.doc/topics/clientapi_overview.html">IBM CICS Management Client Interface (CMCI)</a> is configured and running in your CICS region.</p>
+					</li>
+				</ul>
+				<a href="#installing" id="installing" style="color: inherit; text-decoration: none;">
+					<h2>Installing</h2>
+				</a>
+				<p>Use one of the following methods to install the plug-in:</p>
+				<ul>
+					<li><p>Install the plug-in from an online registry or a local package.</p>
+						<p>  Use the online registry/local package method when you simply want to install the plug-in to Zowe CLI and start using it.</p>
+						<p>  For more information, see <a href="https://zowe.github.io/docs-site/latest/user-guide/cli-installplugins.html">Installing plug-ins</a> on the <a href="https://zowe.github.io/docs-site/latest/">Zowe Docs</a> website.</p>
+					</li>
+					<li><p>Build the plug-in from source and install it into your Zowe CLI implementation.</p>
+						<p>  Use the build from source method when you want to install the plug-in to Zowe CLI using the most current binaries and modify the behavior of the plug-in. For example, you want to create a new command and use the plug-in with the command that you created.</p>
+						<p>  For more information, see <a href="#building-the-plug-in-from-source">Building the plug-in from source</a>.</p>
+					</li>
+				</ul>
+				<a href="#building-from-source" id="building-from-source" style="color: inherit; text-decoration: none;">
+					<h2>Building from source</h2>
+				</a>
+				<!-- TODO When @latest branch of Zowe docs-site exists, we should give users the option to go and read about/install the @latest or the @lts-incremental versions of this plug-in. We can also explain which branches in the repo correspond to which CLI version. -->
+				<p><strong>Follow these steps:</strong></p>
+				<ol>
+					<li><p>The first time that you clone the IBM CICS Plug-in for Zowe CLI GitHub repository, issue the following command against the local directory:</p>
+						<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">install</span>
+</code></pre>
+						<p> The command installs the required dependencies for the plug-in and several development tools. You can run the task at any time to update the tools as needed.</p>
+					</li>
+					<li><p>To build your code changes, issue the following command:</p>
+						<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">run</span><span style="color: #000000"> </span><span style="color: #001080">build</span>
+</code></pre>
+						<p> The first time you build your code changes, you will be prompted for the location of the Imperative CLI Framework package, which is located in the <code>node_modules/@zowe</code> folder in the Zowe CLI home directory.</p>
+						<p> <strong>Note:</strong> When you update <code>package.json</code> to include new dependencies, or when you pull changes that affect <code>package.json</code>, issue the <code>npm update</code> command to download the dependencies.</p>
+					</li>
+					<li><p>Issue one of the following commands to install the plug-in:</p>
+						<pre><code><span style="color: #001080">zowe</span><span style="color: #000000"> </span><span style="color: #001080">plugins</span><span style="color: #000000"> </span><span style="color: #001080">install</span><span style="color: #000000"> @</span><span style="color: #001080">zowe</span><span style="color: #000000">/</span><span style="color: #001080">cics</span><span style="color: #000000">-</span><span style="color: #001080">for</span><span style="color: #000000">-</span><span style="color: #001080">zowe</span><span style="color: #000000">-</span><span style="color: #001080">cli</span>
+</code></pre>
+						<p> Or:</p>
+						<pre><code><span style="color: #001080">zowe</span><span style="color: #000000"> </span><span style="color: #001080">plugins</span><span style="color: #000000"> </span><span style="color: #001080">install</span><span style="color: #000000"> .</span>
+</code></pre>
+					</li>
+				</ol>
+				<p><strong>Tip:</strong> After the installation process completes, it validates that the plug-in was installed correct and the names of its commands, options, and arguments do not conflict with that of the other plug-ins that you installed into your Zowe CLI implimentation.</p>
+				<p>When the validation process is successful, the following message displays:</p>
+				<pre><code><span style="color: #001080">Validation</span><span style="color: #000000"> </span><span style="color: #001080">results</span><span style="color: #000000"> </span><span style="color: #001080">for</span><span style="color: #000000"> </span><span style="color: #001080">plugin</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;cics&#039;</span><span style="color: #000000">:</span>
+<span style="color: #001080">Successfully</span><span style="color: #000000"> </span><span style="color: #001080">validated</span><span style="color: #000000">.</span>
+</code></pre>
+				<p>When an unsuccessful message displays, you can troubleshoot the installation by addressing the issues that the message describes. You can also review the information that is contained in the log file in the Zowe CLI home directory.</p>
+				<a href="#creating-a-user-profile" id="creating-a-user-profile" style="color: inherit; text-decoration: none;">
+					<h2>Creating a user profile</h2>
+				</a>
+				<p>You can set up a CICS profile to avoid typing your connection details on every command. The profile contains your host, port, username, and password for the CMCI instance of your choice. You can create multiple profiles and switch between them if necessary. Issue the following command to create a cics profile:</p>
+				<pre><code><span style="color: #001080">zowe</span><span style="color: #000000"> </span><span style="color: #001080">profiles</span><span style="color: #000000"> </span><span style="color: #001080">create</span><span style="color: #000000"> </span><span style="color: #001080">cics</span><span style="color: #000000"> &lt;</span><span style="color: #001080">profile</span><span style="color: #000000"> </span><span style="color: #001080">name</span><span style="color: #000000">&gt; -</span><span style="color: #0070C1">H</span><span style="color: #000000"> &lt;</span><span style="color: #001080">host</span><span style="color: #000000">&gt; -</span><span style="color: #0070C1">P</span><span style="color: #000000"> &lt;</span><span style="color: #001080">port</span><span style="color: #000000">&gt; -</span><span style="color: #001080">u</span><span style="color: #000000"> &lt;</span><span style="color: #001080">user</span><span style="color: #000000">&gt; -</span><span style="color: #001080">p</span><span style="color: #000000"> &lt;</span><span style="color: #001080">password</span><span style="color: #000000">&gt;</span>
+</code></pre>
+				<p><strong>Note:</strong> For more information, issue the following command:</p>
+				<pre><code><span style="color: #001080">zowe</span><span style="color: #000000"> </span><span style="color: #001080">profiles</span><span style="color: #000000"> </span><span style="color: #001080">create</span><span style="color: #000000"> </span><span style="color: #001080">cis</span><span style="color: #000000"> --</span><span style="color: #001080">help</span>
+</code></pre>
+				<a href="#running-tests" id="running-tests" style="color: inherit; text-decoration: none;">
+					<h2>Running tests</h2>
+				</a>
+				<p>You can perform the following types of tests on the IBM CICS plug-in:</p>
+				<ul>
+					<li>Unit</li>
+					<li>Integration</li>
+					<li>System</li>
+				</ul>
+				<p><strong>Note:</strong> For detailed information about conventions and best practices for running tests against Zowe CLI plug-ins, see <a href="https://github.com/zowe/zowe-cli/blob/master/docs/PluginTESTINGGuidelines.md">Zowe CLI Plug-in Testing Guidelines</a>.</p>
+				<p>Before running the system and integration tests, IBM CICS Transaction Server v5.2 (or later) and IBM CICS Management Client Interface (CMCI) must be installed and running in your mainframe environment. For more information, see <a href="#software-requirements">Software requirements</a>.</p>
+				<p>To define access credentials to the server, copy the file named <code>.../__tests__/__resources__/properties/example_properties.yaml</code> and create a file named <code>.../__tests__/__resources__/properties/custom_properties.yaml</code>.</p>
+				<p><strong>Note:</strong> Information about how to customize the <code>custom_properties.yaml</code> file is provided in the yaml file itself.</p>
+				<p>Issue the following commands to run the tests:</p>
+				<ol>
+					<li><code>npm run test:unit</code></li>
+					<li><code>npm run test:integration</code></li>
+					<li><code>npm run test:system</code></li>
+				</ol>
+				<p>Any failures potentially indicate an issue with the set-up of the Rest API or configuration parameters that were passed in the <code>custom_properties.yaml</code> file.</p>
+				<a href="#uninstalling" id="uninstalling" style="color: inherit; text-decoration: none;">
+					<h2>Uninstalling</h2>
+				</a>
+				<p><strong>Follow these steps:</strong></p>
+				<ol>
+					<li>To uninstall the plug-in from a base application, issue the following command:<pre><code><span style="color: #001080">zowe</span><span style="color: #000000"> </span><span style="color: #001080">plugins</span><span style="color: #000000"> </span><span style="color: #001080">uninstall</span><span style="color: #000000"> @</span><span style="color: #001080">zowe</span><span style="color: #000000">/</span><span style="color: #001080">cics</span><span style="color: #000000">-</span><span style="color: #001080">for</span><span style="color: #000000">-</span><span style="color: #001080">zowe</span><span style="color: #000000">-</span><span style="color: #001080">cli</span>
+</code></pre>
+					</li>
+				</ol>
+				<p>After the uninstallation process completes successfully, the product no longer contains the plug-in.</p>
+				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+					<h2>Contributing</h2>
+				</a>
+				<p>For information about contributing to the plug-in, see the Zowe CLI <a href="CONTRIBUTING.md">Contribution Guidelines</a>. The guidelines contain standards and conventions for developing plug-ins for Zowe CLI. This includes information about running, writing, maintaining automated tests, developing consistent syntax in your plug-in, and ensuring that your plug-in integrates properly with Zowe CLI.</p>
+				<a href="#tutorials" id="tutorials" style="color: inherit; text-decoration: none;">
+					<h3>Tutorials</h3>
+				</a>
+				<p>To learn about building new commands or a new plug-in for Zowe CLI, see <a href="https://zowe.github.io/docs-site/latest/extend/extend-cli/cli-devTutorials.html">Develop for Zowe CLI</a>.</p>
+				<a href="#imperative-cli-framework-documentation" id="imperative-cli-framework-documentation" style="color: inherit; text-decoration: none;">
+					<h3>Imperative CLI Framework documentation</h3>
+				</a>
+				<p><a href="https://github.com/zowe/imperative/wiki">Imperative CLI Framework</a> documentation is a key source of information to learn about the features of Imperative CLI Framework (the code framework that you use to build plug-ins for Zowe CLI). Refer to the documentation as you develop your plug-in.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api.html">api</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_constants.html">api/constants</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_constants_cicscmci_constants.html">api/constants/<wbr>Cics<wbr>Cmci.constants</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_constants_cicscmci_messages.html">api/constants/<wbr>Cics<wbr>Cmci.messages</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_constants_pluginconstants.html">api/constants/<wbr>Plugin<wbr>Constants</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_doc.html">api/doc</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_doc_icmciapiresponse.html">api/doc/ICMCIApi<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_doc_icmciresponseresultsummary.html">api/doc/ICMCIResponse<wbr>Result<wbr>Summary</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_doc_icsdgroupparms.html">api/doc/ICSDGroup<wbr>Parms</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_doc_iprogramparms.html">api/doc/IProgram<wbr>Parms</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_doc_iresourceparms.html">api/doc/IResource<wbr>Parms</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_doc_itransactionparms.html">api/doc/ITransaction<wbr>Parms</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_doc_iurimapparms.html">api/doc/IURIMap<wbr>Parms</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_doc_iwebserviceparms.html">api/doc/IWeb<wbr>Service<wbr>Parms</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_methods.html">api/methods</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_methods_add_to_list.html">api/methods/add-<wbr>to-<wbr>list</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_methods_add_to_list_addtolist.html">api/methods/add-<wbr>to-<wbr>list/<wbr>Add<wbr>ToList</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_methods_define.html">api/methods/define</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_methods_define_define.html">api/methods/define/<wbr>Define</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_methods_delete.html">api/methods/delete</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_methods_delete_delete.html">api/methods/delete/<wbr>Delete</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_methods_disable.html">api/methods/disable</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_methods_disable_disable.html">api/methods/disable/<wbr>Disable</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_methods_discard.html">api/methods/discard</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_methods_discard_discard.html">api/methods/discard/<wbr>Discard</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_methods_enable.html">api/methods/enable</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_methods_enable_enable.html">api/methods/enable/<wbr>Enable</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_methods_get.html">api/methods/get</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_methods_get_get.html">api/methods/get/<wbr>Get</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_methods_install.html">api/methods/install</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_methods_install_install.html">api/methods/install/<wbr>Install</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_methods_remove_from_list.html">api/methods/remove-<wbr>from-<wbr>list</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_methods_remove_from_list_removefromlist.html">api/methods/remove-<wbr>from-<wbr>list/<wbr>Remove<wbr>From<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_methods_set.html">api/methods/set</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_methods_set_set.html">api/methods/set/<wbr>Set</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_rest.html">api/rest</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_rest_cicscmcirestclient.html">api/rest/<wbr>Cics<wbr>Cmci<wbr>Rest<wbr>Client</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli__strings__en.html">cli/-<wbr>strings-<wbr>/en</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli__strings__es.html">cli/-<wbr>strings-<wbr>/es</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_cicsbasehandler.html">cli/<wbr>Cics<wbr>Base<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_cicssession.html">cli/<wbr>Cics<wbr>Session</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_add_to_list_addtolist_definition.html">cli/add-<wbr>to-<wbr>list/<wbr>Add<wbr>ToList.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_add_to_list_csdgroup_csdgroup_definition.html">cli/add-<wbr>to-<wbr>list/csd<wbr>Group/CSDGroup.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_add_to_list_csdgroup_csdgroup_handler.html">cli/add-<wbr>to-<wbr>list/csd<wbr>Group/CSDGroup.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_define_define_definition.html">cli/define/<wbr>Define.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_define_program_program_definition.html">cli/define/program/<wbr>Program.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_define_program_program_handler.html">cli/define/program/<wbr>Program.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_define_transaction_transaction_definition.html">cli/define/transaction/<wbr>Transaction.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_define_transaction_transaction_handler.html">cli/define/transaction/<wbr>Transaction.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_define_urimap_client_urimapclient_definition.html">cli/define/urimap-<wbr>client/<wbr>Urimap<wbr>Client.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_define_urimap_client_urimapclient_handler.html">cli/define/urimap-<wbr>client/<wbr>Urimap<wbr>Client.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_define_urimap_pipeline_urimappipeline_definition.html">cli/define/urimap-<wbr>pipeline/<wbr>Urimap<wbr>Pipeline.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_define_urimap_pipeline_urimappipeline_handler.html">cli/define/urimap-<wbr>pipeline/<wbr>Urimap<wbr>Pipeline.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_define_urimap_server_urimapserver_definition.html">cli/define/urimap-<wbr>server/<wbr>Urimap<wbr>Server.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_define_urimap_server_urimapserver_handler.html">cli/define/urimap-<wbr>server/<wbr>Urimap<wbr>Server.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_define_webservice_webservice_definition.html">cli/define/webservice/<wbr>Webservice.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_define_webservice_webservice_handler.html">cli/define/webservice/<wbr>Webservice.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_delete_delete_definition.html">cli/delete/<wbr>Delete.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_delete_program_program_definition.html">cli/delete/program/<wbr>Program.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_delete_program_program_handler.html">cli/delete/program/<wbr>Program.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_delete_transaction_transaction_definition.html">cli/delete/transaction/<wbr>Transaction.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_delete_transaction_transaction_handler.html">cli/delete/transaction/<wbr>Transaction.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_delete_urimap_urimap_definition.html">cli/delete/urimap/<wbr>Urimap.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_delete_urimap_urimap_handler.html">cli/delete/urimap/<wbr>Urimap.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_delete_webservice_webservice_definition.html">cli/delete/webservice/<wbr>Webservice.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_delete_webservice_webservice_handler.html">cli/delete/webservice/<wbr>Webservice.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_disable_disable_definition.html">cli/disable/<wbr>Disable.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_disable_urimap_urimap_definition.html">cli/disable/urimap/<wbr>Urimap.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_disable_urimap_urimap_handler.html">cli/disable/urimap/<wbr>Urimap.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_discard_discard_definition.html">cli/discard/<wbr>Discard.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_discard_program_program_definition.html">cli/discard/program/<wbr>Program.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_discard_program_program_handler.html">cli/discard/program/<wbr>Program.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_discard_transaction_transaction_definition.html">cli/discard/transaction/<wbr>Transaction.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_discard_transaction_transaction_handler.html">cli/discard/transaction/<wbr>Transaction.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_discard_urimap_urimap_definition.html">cli/discard/urimap/<wbr>Urimap.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_discard_urimap_urimap_handler.html">cli/discard/urimap/<wbr>Urimap.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_enable_enable_definition.html">cli/enable/<wbr>Enable.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_enable_urimap_urimap_definition.html">cli/enable/urimap/<wbr>Urimap.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_enable_urimap_urimap_handler.html">cli/enable/urimap/<wbr>Urimap.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_get_get_definition.html">cli/get/<wbr>Get.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_get_resource_resource_definition.html">cli/get/resource/<wbr>Resource.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_get_resource_resource_handler.html">cli/get/resource/<wbr>Resource.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_install_install_definition.html">cli/install/<wbr>Install.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_install_program_program_definition.html">cli/install/program/<wbr>Program.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_install_program_program_handler.html">cli/install/program/<wbr>Program.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_install_transaction_transaction_definition.html">cli/install/transaction/<wbr>Transaction.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_install_transaction_transaction_handler.html">cli/install/transaction/<wbr>Transaction.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_install_urimap_urimap_definition.html">cli/install/urimap/<wbr>Urimap.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_install_urimap_urimap_handler.html">cli/install/urimap/<wbr>Urimap.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_refresh_refresh_definition.html">cli/refresh/<wbr>Refresh.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_refresh_program_program_definition.html">cli/refresh/program/<wbr>Program.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_refresh_program_program_handler.html">cli/refresh/program/<wbr>Program.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_remove_from_list_removefromlist_definition.html">cli/remove-<wbr>from-<wbr>list/<wbr>Remove<wbr>From<wbr>List.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_remove_from_list_csdgroup_csdgroup_definition.html">cli/remove-<wbr>from-<wbr>list/csd<wbr>Group/CSDGroup.definition</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/cli_remove_from_list_csdgroup_csdgroup_handler.html">cli/remove-<wbr>from-<wbr>list/csd<wbr>Group/CSDGroup.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/healthcheck_handler.html">health<wbr>Check.handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/imperative.html">imperative</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/index.html">index</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
