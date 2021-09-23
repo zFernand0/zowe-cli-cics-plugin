@@ -14,20 +14,20 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - run: mkdir -p docs/typedoc-theme-clone
+      # - run: mkdir -p docs/typedoc-theme-clone
 
-      - name: Get typedoc theme
-        uses: actions/checkout@v2
-        with:
-          name: zowe/zowe-cli
-          ref: refs/remotes/origin/zowe-cli-typedoc-theme
-          path: docs/typedoc-theme-clone
+      # - name: Get typedoc theme
+      #   uses: actions/checkout@v2
+      #   with:
+      #     name: zowe/zowe-cli
+      #     ref: refs/remotes/origin/zowe-cli-typedoc-theme
+      #     path: docs/typedoc-theme-clone
 
-      - run: ls -al docs/typedoc-theme-clone
+      # - run: ls -al docs/typedoc-theme-clone
 
       - name: Build documentation
-        # run: npm run typedoc -- --theme docs/typedoc-theme
-        run: npm run typedoc
+        run: npm run typedoc -- --theme docs/typedoc-theme
+        # run: npm run typedoc
 
       - name: Archive build
         id: upload
